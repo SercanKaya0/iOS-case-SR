@@ -53,6 +53,9 @@ Modern İK ekipleri için geliştirilmiş, aday değerlendirme ve işe alım sü
 - Dev / Preprod / Prod şema yapısı
 - Firebase Cloud Messaging desteği
 - Firebase Analytics event'leri
+- Firebase Crashlytic Entegrasyonu
+- SwiftLint Kurulumu
+- Deeplink Entegrasyonu - (Scheme: loodosCase)
 
 ---
 
@@ -68,36 +71,78 @@ Modern İK ekipleri için geliştirilmiş, aday değerlendirme ve işe alım sü
 ---
 
 ### 🔹 Splash Screen
+- [Figma Linki](https://www.figma.com/design/MbORukxK22gzWuvYmP41Vv/Supa-Resume---Light---Dark--FREE-Resume-Cover-Letter---Community-?node-id=33-5366)
 - **Task Kodu:** `HRAPP-001`
-- Auto Layout & Dark Mode destekli
+- Auto Layout ile tüm cihaz boyutlarına uyumlu tasarım
+- Dark Mode desteği
 - Launch sonrası gösterilir
-- Kullanıcı onboard ekranını görmediyse sırasıyla:
-  1. Onboard
-  2. Login (veya doğrudan Home)
-
+- Genel Akış;
+    - Uygulama Launch Screen sonrasında SplashViewController üzerinden başlar.
+    - Uygulama, https://cdn.dev.enliq/tr-TR adresine bir istek göndererek bir JSON dosyası çeker.
+    - Bu JSON dosyasındaki key–value verileri, lokalizasyon amaçlı kullanılacaktır.
+    - Çekilen JSON dosyası cihazın yerel deposunda (örneğin UserDefaults veya dosya sistemi) saklanmalıdır.
+    - Yönlendirme Kuralları:
+        - Eğer kullanıcı onboard ekranlarını daha önce görmemişse, uygulama Onboard ekranına yönlendirilmelidir.
+        - Kullanıcı giriş yaptıysa, doğrudan Anasayfa (Home) ekranına yönlendirilmelidir.
+        - Kullanıcı giriş yapmadıysa, Login ekranına yönlendirilmelidir.
+        - Başlangıç Noktası:
+        - Geliştirmeye SplashViewController dosyasından başlanmalıdır.
+        - Uygulama açıldığında kullanıcının dil dosyasını çekebilmesi için dikkat edilmesi gerekenler;
+            - Uygulama yüklendiğinde eğer cihaz dili türkçe değilse en-US, eğer türkçe ise tr-TR olarak localizable dosyası çekilmelidir.
 ---
 
 ### 🔹 Onboard
+- [Figma Linki](https://www.figma.com/design/MbORukxK22gzWuvYmP41Vv/Supa-Resume---Light---Dark--FREE-Resume-Cover-Letter---Community-?node-id=33-5366)
 - **Task Kodu:** `HRAPP-002`
-- Paging-enabled (yatay kaydırma)
-- Görseller URL'den çekilir, yüklenemezse placeholder gösterilir
-- Geri tuşu devre dışı
-- "Atla" → Login ekranı
-- "Devam" → Sıradaki sayfa, son sayfada → Login
+- Auto Layout ile tüm cihaz boyutlarına uyumlu tasarım
+- Dark Mode desteği
+- Genel Akış;
+    - Uygulama, `https://cdn.dev.enliq/tr-TR` adresine bir istek göndererek bir JSON dosyası çeker.
+    - Bu JSON dosyasındaki veriler, Onboard ekranında kullanılacaktır.
+    - JSON verisi, Splash ekranında çekilmeli ve Onboard ekranına aktarılmalıdır.
+    - Resimler yüklenirken iOS native loading mekanizması kullanılmalıdır.
+    - Görseller yüklenirken hata alınırsa, tasarımdaki placeholder görsel gösterilmelidir.
+    - Resimler cache'lenmelidir; böylece kullanıcı Onboard ekranını tekrar gördüğünde yeniden indirilmelerine gerek kalmaz.
+    - Kullanıcı Onboard ekranında geri butonunu kullanarak çıkış yapamamalıdır.
+    - Kullanıcı "Devam Et" butonuna bastığında, bir sonraki Onboard sayfası gösterilmelidir.
+    - Kullanıcı "Atla" (Skip) butonuna basarsa, doğrudan Login ekranına yönlendirilmelidir.
+    - Kullanıcı son Onboard ekranındaysa ve "Devam Et" butonuna basarsa, Login ekranına yönlendirme yapılmalıdır.
 - **Nice to Have:**
-  - `Onboarding_Skipped` ve `Onboarding_Completed` event’leri
+  - Firebase Event Yollama (onboard_skipped, onboard_continue)
 
 ---
 
 ### 🔹 Login
+- [Figma Linki](https://www.figma.com/design/MbORukxK22gzWuvYmP41Vv/Supa-Resume---Light---Dark--FREE-Resume-Cover-Letter---Community-?node-id=33-5366)
 - **Task Kodu:** `HRAPP-003`
-- **Test Kullanıcı:** `username: test.case`, `password: 123123`
-- Karakter sınırı: kullanıcı adı (50), şifre (20)
-- Emoji girişi engellenmeli
-- Giriş başarılıysa OTP ekranına geçilmeli
+- **Test Kullanıcı Bilgileri:**  
+  `username: test.case`, `password: 123123`
+- **CURL Örneği:**
+  ```bash
+  curl -X POST https://api.dev.hrapp.com/login \
+    -H "Content-Type: application/json" \
+    -d '{
+      "username": "test.case",
+      "password": "123123"
+    }'
+  ```
+- Tüm cihaz boyutlarına uyumlu Auto Layout tasarımı
+- Dark Mode desteği
+
+- **Genel Akış:**
+  - Kullanıcı adı alanı minimum 3, maksimum 50 karakter olmalıdır.
+  - Şifre alanı minimum 6, maksimum 20 karakter olmalıdır.
+  - Tüm giriş alanlarında emoji kullanımı engellenmelidir.
+  - Herhangi bir giriş alanında doğrulama hatası mevcutsa, "Giriş Yap" butonu pasif durumda olmalıdır.
+  - Hatalı alanların altında kullanıcıya durumu açıklayan bilgilendirici metin gösterilmelidir.  
+    Örnek: `Kullanıcı adı en az 3 karakter olmalıdır.`
+  - Giriş başarılı olduğunda kullanıcı OTP ekranına yönlendirilmelidir.
+  - Login isteğinden dönen response verileri OTP ekranına aktarılmalıdır.
+    - Bu veri aktarımı ve yönlendirme işlemi için örnek bir kod parçası sağlanacaktır.
+
 - **Nice to Have:**
-  - Firebase login success/error event’leri
-  - Input bileşenleri reusable component yapısında olmalı
+  - Firebase üzerinden login başarılı/başarısız event'lerinin gönderilmesi
+  - Giriş alanlarının yeniden kullanılabilir (reusable) component yapısında tasarlanması
 
 ---
 

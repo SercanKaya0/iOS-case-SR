@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Screens
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,8 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let bounds = UIScreen.main.bounds
         self.window = UIWindow(frame: bounds)
         self.window?.makeKeyAndVisible()
-       // AppRouter.shared.window = window
-       // AppRouter.shared.startApp()
+        AppRouter.shared.window = window
+        AppRouter.shared.startApp()
         return true
     }
 }
