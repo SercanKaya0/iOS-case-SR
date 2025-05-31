@@ -9,10 +9,10 @@ Modern İK ekipleri için geliştirilmiş, aday değerlendirme ve işe alım sü
 
 ## 📘 İçindekiler
 
-- [Giriş](#giriş)
+- [Giris](#giris)
 - [Gereksinimler](#gereksinimler)
-- [Nice to Have Özellikler](#nice-to-have)
-- [Özellikler](#özellikler)
+- [Nice to Have Ozellikler](#nice-to-have-ozellikler)
+- [Ozellikler](#ozellikler)
   - [Launch Screen](#launch-screen)
   - [Splash Screen](#splash-screen)
   - [Onboard](#onboard)
@@ -23,7 +23,7 @@ Modern İK ekipleri için geliştirilmiş, aday değerlendirme ve işe alım sü
 
 ---
 
-## 📌 Giriş
+## Giris
 
 **HR App**, birden fazla markaya kolayca uyarlanabilecek esnek bir yapıda tasarlanmıştır. Amaç; yalnızca marka kimliğine uygun tasarımlar giydirilerek, minimum geliştirme ile farklı pazarlarda kullanılabilecek bir İnsan Kaynakları uygulaması sunmaktır.
 
@@ -47,7 +47,7 @@ Modern İK ekipleri için geliştirilmiş, aday değerlendirme ve işe alım sü
 
 ---
 
-## ✨ Nice to Have
+## Nice to Have Ozellikler
 
 - Lottie animasyonları
 - Firebase Remote Config hazırlığı
@@ -60,7 +60,7 @@ Modern İK ekipleri için geliştirilmiş, aday değerlendirme ve işe alım sü
 
 ---
 
-## 🚀 Özellikler
+## Ozellikler
 
 ### 🔹 Launch Screen
 - [Figma Linki](https://www.figma.com/design/MbORukxK22gzWuvYmP41Vv/Supa-Resume---Light---Dark--FREE-Resume-Cover-Letter---Community-?node-id=33-5366)
