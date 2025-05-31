@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import Utilities
 
 public protocol HomeViewDataSource {
 }
 
 public protocol HomeViewEventSource {
+    var reloadData: VoidClosure? { get set }
 }
 
 public protocol HomeViewProtocol: HomeViewDataSource, HomeViewEventSource {
@@ -18,6 +20,8 @@ public protocol HomeViewProtocol: HomeViewDataSource, HomeViewEventSource {
 }
 
 public final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
+    // MARK: - Events
+    public var reloadData: VoidClosure?
     
     public func viewDidLoad() {
     }
