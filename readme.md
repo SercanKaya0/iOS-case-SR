@@ -87,7 +87,7 @@ Modern İK ekipleri için geliştirilmiş, aday değerlendirme ve işe alım sü
 - Launch sonrası gösterilir
 - Genel Akış;
     - Uygulama Launch Screen sonrasında SplashViewController üzerinden başlar.
-    - Uygulama, https://cdn.dev.enliq/tr-TR adresine bir istek göndererek bir JSON dosyası çeker.
+    - Yukarıdaki CURL örneği ile belirtilen API'ye istek göndererek ilgili JSON verisini alabilirsiniz.
     - Bu JSON dosyasındaki key–value verileri, lokalizasyon amaçlı kullanılacaktır.
     - Çekilen JSON dosyası cihazın yerel deposunda (örneğin UserDefaults veya dosya sistemi) saklanmalıdır.
     - Yönlendirme Kuralları:
@@ -115,7 +115,7 @@ Modern İK ekipleri için geliştirilmiş, aday değerlendirme ve işe alım sü
 - Auto Layout ile tüm cihaz boyutlarına uyumlu tasarım
 - Dark Mode desteği
 - Genel Akış;
-    - JSON verisi, Splash ekranında çekilmeli ve Onboard ekranına aktarılmalıdır.
+    - Yukarıdaki CURL örneği ile belirtilen API'den alınan JSON verisi Splash ekranında çekilip Onboard ekranına aktarılmalıdır.
     - Resimler yüklenirken iOS native loading mekanizması kullanılmalıdır.
     - Görseller yüklenirken hata alınırsa, tasarımdaki placeholder görsel gösterilmelidir.
     - Resimler cache'lenmelidir; böylece kullanıcı Onboard ekranını tekrar gördüğünde yeniden indirilmelerine gerek kalmaz.
