@@ -9,27 +9,27 @@ Modern İK ekipleri için geliştirilmiş, aday değerlendirme ve işe alım sü
 
 ## 📘 İçindekiler
 
-- [giris](#giris)
-- [gereksinimler](#gereksinimler)
-- [nice-to-have-ozellikler](#nice-to-have-ozellikler)
-- [özellikler](#ozellikler)
-  - [launch screen](#launch-screen)
-  - [splash screen](#splash-screen)
-  - [onboard](#onboard)
-  - [login](#login)
-  - [otp](#otp)
-  - [home](#home)
-  - [settings](#settings)
+- [📖 Giriş](#giriş)
+- [⚙️ Gereksinimler](#gereksinimler)
+- [✨ Nice to Have Özellikler](#nice-to-have-ozellikler)
+- [🚀 Özellikler](#özellikler)
+  - [🎬 Launch Screen](#launch-screen)
+  - [💧 Splash Screen](#splash-screen)
+  - [🛳️ Onboard](#onboard)
+  - [🔐 Login](#login)
+  - [🔢 OTP](#otp)
+  - [🏠 Home](#home)
+  - [⚙️ Settings](#settings)
 
 ---
 
-## giris
+## 📖 Giriş
 
 **HR App**, birden fazla markaya kolayca uyarlanabilecek esnek bir yapıda tasarlanmıştır. Amaç; yalnızca marka kimliğine uygun tasarımlar giydirilerek, minimum geliştirme ile farklı pazarlarda kullanılabilecek bir İnsan Kaynakları uygulaması sunmaktır.
 
 ---
 
-## gereksinimler
+## ⚙️ Gereksinimler
 
 - **Mimari:** MVVM-R
 - **Branch Yapısı:**
@@ -47,7 +47,7 @@ Modern İK ekipleri için geliştirilmiş, aday değerlendirme ve işe alım sü
 
 ---
 
-## nice-to-have-ozellikler
+## ✨ Nice to Have Özellikler
 
 - Lottie animasyonları
 - Firebase Remote Config hazırlığı
@@ -60,9 +60,9 @@ Modern İK ekipleri için geliştirilmiş, aday değerlendirme ve işe alım sü
 
 ---
 
-## özellikler
+## 🚀 Özellikler
 
-### launch screen
+### 🎬 Launch Screen
 - [Figma Linki](https://www.figma.com/design/MbORukxK22gzWuvYmP41Vv/Supa-Resume---Light---Dark--FREE-Resume-Cover-Letter---Community-?node-id=33-5366)
 - **Task Kodu:** `HRAPP-000`
 - Auto Layout uyumlu
@@ -70,7 +70,7 @@ Modern İK ekipleri için geliştirilmiş, aday değerlendirme ve işe alım sü
 - Uygulama bu ekranla başlamalı
 ---
 
-### splash screen
+### 💧 Splash Screen
 - [Figma Linki](https://www.figma.com/design/MbORukxK22gzWuvYmP41Vv/Supa-Resume---Light---Dark--FREE-Resume-Cover-Letter---Community-?node-id=33-5366)
 - **CURL Örneği:**
   ```bash
@@ -100,7 +100,7 @@ Modern İK ekipleri için geliştirilmiş, aday değerlendirme ve işe alım sü
             - Uygulama yüklendiğinde eğer cihaz dili türkçe değilse en-US, eğer türkçe ise tr-TR olarak localizable dosyası çekilmelidir.
 ---
 
-### onboard
+### 🛳️ Onboard
 - [Figma Linki](https://www.figma.com/design/MbORukxK22gzWuvYmP41Vv/Supa-Resume---Light---Dark--FREE-Resume-Cover-Letter---Community-?node-id=33-5366)
 - **CURL Örneği:**
   ```bash
@@ -128,7 +128,7 @@ Modern İK ekipleri için geliştirilmiş, aday değerlendirme ve işe alım sü
 
 ---
 
-### login
+### 🔐 Login
 - [Figma Linki](https://www.figma.com/design/MbORukxK22gzWuvYmP41Vv/Supa-Resume---Light---Dark--FREE-Resume-Cover-Letter---Community-?node-id=33-5366)
 - **Task Kodu:** `HRAPP-003`
 - **Test Kullanıcı Bilgileri:**  
@@ -163,7 +163,7 @@ Modern İK ekipleri için geliştirilmiş, aday değerlendirme ve işe alım sü
 
 ---
 
-### otp
+### 🔢 OTP
 - **Task Kodu:** `HRAPP-004`
 - **Test Kullanıcı Bilgileri:**  
   `otp: 12345`
@@ -185,7 +185,7 @@ Modern İK ekipleri için geliştirilmiş, aday değerlendirme ve işe alım sü
 
 ---
 
-### home
+### 🏠 Home
 - [Figma Linki](https://www.figma.com/design/MbORukxK22gzWuvYmP41Vv/Supa-Resume---Light---Dark--FREE-Resume-Cover-Letter---Community-?node-id=33-5366)
 - **Task Kodu:** `HRAPP-005`
 - **Banner CURL Örneği:**
@@ -234,7 +234,7 @@ Modern İK ekipleri için geliştirilmiş, aday değerlendirme ve işe alım sü
 
 ---
 
-### settings
+### ⚙️ Settings
 - **Task Kodu:** `HRAPP-006`
 - [Figma Linki](https://www.figma.com/design/MbORukxK22gzWuvYmP41Vv/Supa-Resume---Light---Dark--FREE-Resume-Cover-Letter---Community-?node-id=33-5366)
 - TabBar’da erişilebilir bir sayfa olarak gösterilmelidir.
