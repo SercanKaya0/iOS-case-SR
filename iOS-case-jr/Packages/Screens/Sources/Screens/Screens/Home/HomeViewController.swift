@@ -42,5 +42,8 @@ private extension HomeViewController {
 private extension HomeViewController {
     
     func subscribeViewModel() {
+        viewModel.reloadData = {
+            // collectionView.reloadData
+        }
     }
 }
