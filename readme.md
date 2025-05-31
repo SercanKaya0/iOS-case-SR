@@ -43,6 +43,7 @@ Modern İK ekipleri için geliştirilmiş, aday değerlendirme ve işe alım sü
 - **Karanlık Mod (Dark Mode)** desteği
 - **Layout:** Auto Layout ile responsive tasarım
 - **Geliştirme Yöntemi:** Programmatic veya XIB
+- **Servis Katmanı:** DataProvider isim bir spm package içeriside bulunmalıdır.
 
 ---
 
@@ -67,11 +68,19 @@ Modern İK ekipleri için geliştirilmiş, aday değerlendirme ve işe alım sü
 - Auto Layout uyumlu
 - Dark Mode desteği
 - Uygulama bu ekranla başlamalı
-
 ---
 
 ### 🔹 Splash Screen
 - [Figma Linki](https://www.figma.com/design/MbORukxK22gzWuvYmP41Vv/Supa-Resume---Light---Dark--FREE-Resume-Cover-Letter---Community-?node-id=33-5366)
+- **CURL Örneği:**
+  ```bash
+  curl -X POST https://api.dev.hrapp.com/login \
+    -H "Content-Type: application/json" \
+    -d '{
+      "username": "test.case",
+      "password": "123123"
+    }'
+  ```
 - **Task Kodu:** `HRAPP-001`
 - Auto Layout ile tüm cihaz boyutlarına uyumlu tasarım
 - Dark Mode desteği
@@ -93,12 +102,19 @@ Modern İK ekipleri için geliştirilmiş, aday değerlendirme ve işe alım sü
 
 ### 🔹 Onboard
 - [Figma Linki](https://www.figma.com/design/MbORukxK22gzWuvYmP41Vv/Supa-Resume---Light---Dark--FREE-Resume-Cover-Letter---Community-?node-id=33-5366)
+- **CURL Örneği:**
+  ```bash
+  curl -X POST https://api.dev.hrapp.com/login \
+    -H "Content-Type: application/json" \
+    -d '{
+      "username": "test.case",
+      "password": "123123"
+    }'
+  ```
 - **Task Kodu:** `HRAPP-002`
 - Auto Layout ile tüm cihaz boyutlarına uyumlu tasarım
 - Dark Mode desteği
 - Genel Akış;
-    - Uygulama, `https://cdn.dev.enliq/tr-TR` adresine bir istek göndererek bir JSON dosyası çeker.
-    - Bu JSON dosyasındaki veriler, Onboard ekranında kullanılacaktır.
     - JSON verisi, Splash ekranında çekilmeli ve Onboard ekranına aktarılmalıdır.
     - Resimler yüklenirken iOS native loading mekanizması kullanılmalıdır.
     - Görseller yüklenirken hata alınırsa, tasarımdaki placeholder görsel gösterilmelidir.
@@ -139,6 +155,7 @@ Modern İK ekipleri için geliştirilmiş, aday değerlendirme ve işe alım sü
   - Giriş başarılı olduğunda kullanıcı OTP ekranına yönlendirilmelidir.
   - Login isteğinden dönen response verileri OTP ekranına aktarılmalıdır.
     - Bu veri aktarımı ve yönlendirme işlemi için örnek bir kod parçası sağlanacaktır.
+    - pushOTP(expiresIn: Int?) kullanılarak değeri taşıyabilirsiniz.
 
 - **Nice to Have:**
   - Firebase üzerinden login başarılı/başarısız event'lerinin gönderilmesi
@@ -148,37 +165,85 @@ Modern İK ekipleri için geliştirilmiş, aday değerlendirme ve işe alım sü
 
 ### 🔹 OTP
 - **Task Kodu:** `HRAPP-004`
-- Kod girişi otomatik doldurulabilir olmalı
-- Progress bar: ViewModel’den gelen süre kadar geri sayım yapmalı
-- Kod: `12345` → başarılı, diğerleri → tooltip hata
-- Uygulama arka planda olsa bile süre devam etmeli
-- Süre bitince input temizlenmeli
-- Giriş başarılıysa ana sayfaya yönlendirilmeli
-- **Nice to Have:**
-  - Firebase login success/error event’leri
-  - Input bileşenleri reusable component yapısında olmalı
+- **Test Kullanıcı Bilgileri:**  
+  `otp: 12345`
+- Tüm cihaz boyutlarına uyumlu Auto Layout tasarımı
+- Dark Mode desteği
+
+- **Genel Akış:**
+  - Kullanıcı, klavyedeki otomatik öneri (AutoFill) özelliğiyle tek kullanımlık kodu kolayca girebilmelidir.
+  - Tasarıma uygun bir progress bar bulunmalı ve login yanıtında dönen `expiresIn` süresi kadar geri sayım yapmalıdır.
+  - OTP alanına `"12345"` yazılıp "Giriş Yap" butonuna basıldığında işlem başarılı kabul edilir.
+  - "Giriş Yap" butonu yalnızca tüm OTP input alanları doluysa aktif hale gelmelidir.
+  - Kullanıcı, geri butonuyla Login ekranına dönebilmelidir.
+  - Uygulama arka plana alındığında geri sayım durmamalı; örneğin, 30. saniyede arka plana alınıp 20 saniye sonra geri dönüldüğünde, sayaç 10. saniyeden devam etmelidir.
+  - Giriş işlemi başarılı olduğunda kullanıcı Home ekranına yönlendirilmelidir.
+
+ - **Nice to Have:**
+  - Firebase üzerinden otp_success ve otp_error event’lerinin gönderilmesi
+  - OTP input alanlarının yeniden kullanılabilir (reusable) bir component olarak tasarlanması
 
 ---
 
 ### 🔹 Home
+- [Figma Linki](https://www.figma.com/design/MbORukxK22gzWuvYmP41Vv/Supa-Resume---Light---Dark--FREE-Resume-Cover-Letter---Community-?node-id=33-5366)
 - **Task Kodu:** `HRAPP-005`
-- Dinamik section yapısı
-- Her bir section, servisten gelen tipe uygun component ile gösterilmeli
-- Banner: horizontal scroll, 5 saniyede bir geçiş + döngü
-- Tabbar görünmeli
-- Splash esnasında home verileri hazırlanmalı
+- **Banner CURL Örneği:**
+  ```bash
+  curl -X POST https://api.dev.hrapp.com/login \
+    -H "Content-Type: application/json" \
+    -d '{
+      "username": "test.case",
+      "password": "123123"
+    }'
+  ```
+  - **Otopark CURL Örneği:**
+  ```bash
+  curl -X POST https://api.dev.hrapp.com/login \
+    -H "Content-Type: application/json" \
+    -d '{
+      "username": "test.case",
+      "password": "123123"
+    }'
+  ```
+- Tüm cihaz boyutlarına uyumlu Auto Layout tasarımı
+- Dark Mode desteği
+- CollectionView ile geliştirme yapılacaktır.
+   - Banner 10 saniyede bir otomatik olarak scroll etmelidir.
+   - Eğer son banner gösteriliyorsa, 10 saniye sonra tekrar en başa dönmelidir (sonsuz döngü).
+- CollectionView Cell kullanılmamalıdır. Tarafınıza verilen özel sınıf kullanılarak entegrasyon yapılmalıdır.  
+  Kullanılacak sınıf: `LCGenericCollectionViewCell`
+
+  ```swift
+  let cell: LCGenericCollectionViewCell<ExampleView> = collectionView.dequeueReusableCell(for: indexPath)
+    let view = ExampleView()
+    view.set(viewModel: cellModel)
+    cell.cellView = cellView
+  return cell
+  ```
+ - Kullanıcı Banner’a tıkladığında detay sayfasına yönlendirilmelidir.
+ - Maslak Otopark bileşeni bir servis isteğiyle durumunu göstermelidir ("BOŞ" veya "DOLU").
+   - Servis yanıtında dönen süre (örneğin 60 saniye) kadar bekleyip yeniden istek atılmalıdır.
+   - Eğer servisten gelen süre “0” ise, tekrar istek atılmamalıdır (timer durdurulmalıdır).
+ - Kullanıcı bu ekrandan geri dönüş yapamamalıdır.
+ - Ekran, TabBar’da yer almalıdır. (MainTabBarViewController)
+
 - **Nice to Have:**
-  - Banner tıklamalarında Firebase event (ör: `banner_click`)
+  - Firebase click_banner, refresh_carpark, stop_timer, click_home_tab eventleri.
+
 
 ---
 
-### 🔹 Settings
+-### 🔹 Settings
 - **Task Kodu:** `HRAPP-006`
-- Dil değişikliği: Cihaz dili Türkçe değilse varsayılan İngilizce
-- Dil seçimi sheet ile yapılmalı
-- Uygulama dili anlık olarak değiştirilmeli
-- Tabbar üzerinden erişilebilir olmalı
-- Çıkış → Login ekranına yönlendirme
+- [Figma Linki](https://www.figma.com/design/MbORukxK22gzWuvYmP41Vv/Supa-Resume---Light---Dark--FREE-Resume-Cover-Letter---Community-?node-id=33-5366)
+- TabBar’da erişilebilir bir sayfa olarak gösterilmelidir.
+- Kullanıcı, "Dil Değiştir" butonuna tıkladığında bir sheet açılmalı ve buradan dil seçimi yapabilmelidir.
+- Seçim yapıldığında bir loading göstergesi çıkarılmalı ve uygulama dili anlık olarak değişmelidir.
+  - Bu değişiklik, kullanıcı Settings ekranından çıkmadan gerçekleşmelidir.
+- Eğer cihaz dili Türkçe değilse, varsayılan dil İngilizce olarak ayarlanmalıdır.
+- Kullanıcı "Çıkış Yap" butonuna bastığında, Login ekranına yönlendirilmelidir.
+
 - **Nice to Have:**
   - Firebase logout event’i
 
@@ -186,11 +251,8 @@ Modern İK ekipleri için geliştirilmiş, aday değerlendirme ve işe alım sü
 
 ## 📎 Ek Bilgi
 
-- Tüm ekranlar Auto Layout ile responsive olmalıdır.
-- Tüm özelliklerde Dark Mode desteği zorunludur.
-- Lokalizasyon tüm metinlerde dikkate alınmalıdır.
-- Firebase Analytics ve event tetiklemeleri opsiyonel ama tercih edilir.
-
+- Localizasyon yaparken servisten gelen keylere gösterim yapacağız. Json dosyasında tüm textler hazır olacaktır uygun keyi kullanmanız yeterli olcaktır. ("login_title" : "Hoşgeldiniz")
+- Servislerden eğer 401 gelirse uygulama Logine yönlenmelidir ve kullanıcı bilgileri silinmelidir..
 ---
 
 > Bu proje, minimum geliştirme ile farklı marka ihtiyaçlarına uyum sağlamayı hedefleyen, ölçeklenebilir ve modüler bir yapı üzerine kurulmuştur.

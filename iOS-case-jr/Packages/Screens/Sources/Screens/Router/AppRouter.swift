@@ -9,7 +9,9 @@ import UIKit
 import Utilities
 
 typealias Routes =
-SplashRoute
+SplashRoute &
+HomeRoute &
+MainTabBarRoute
 
 public final class AppRouter: Router, Routes {
     public weak var window: UIWindow?
@@ -29,6 +31,6 @@ public final class AppRouter: Router, Routes {
     }
 
     public func startApp() {
-        AppRouter.shared.pushSplash()
+        AppRouter.shared.placeOnWindowsTabBar()
     }
 }

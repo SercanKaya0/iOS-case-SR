@@ -13,7 +13,7 @@ public protocol OnboardViewDataSource {
 public protocol OnboardViewEventSource {
 }
 
-public protocol OnboardViewProtocol: SplashViewDataSource, SplashViewEventSource {
+public protocol OnboardViewProtocol: OnboardViewDataSource, OnboardViewEventSource {
     func viewDidLoad()
 }
 
