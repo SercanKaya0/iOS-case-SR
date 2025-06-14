@@ -113,8 +113,10 @@ APP_ASSETS = AppIconBeta
 
 ##### store.config
 ```env
-APP_NAME = α refASSETS = AppIconStore
-```ğ
+APP_NAME = α iOS Case SR
+BUNDLE_ID = com.ios-case
+APP_ASSETS = AppIcon
+```
 ---
 
 ### 💧 Splash Screen
