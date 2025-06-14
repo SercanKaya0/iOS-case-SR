@@ -49,7 +49,6 @@ Modern İK ekipleri için geliştirilmiş, aday değerlendirme ve işe alım sü
 - **Karanlık Mod (Dark Mode)** desteği
 - **Layout:** Auto Layout ile responsive tasarım
 - **Geliştirme Yöntemi:** Programmatic veya XIB
-- **Servis Katmanı:** DataProvider isim bir spm package içerisinde bulunmalıdır. (Alamofire ile bir alt yapı kurulmalıdır.)
 ---
 
 ## 📂 API Örnekleri
@@ -68,13 +67,54 @@ curl -X POST https://api.dev.hrapp.com/login \
 
 ## 🚀 Özellikler
 
-### 🎬 Ortam Kurulumu
-- [Figma Linki](https://www.figma.com/design/MbORukxK22gzWuvYmP41Vv/Supa-Resume---Light---Dark--FREE-Resume-Cover-Letter---Community-?node-id=33-5366)
-- **Task Kodu:** `HRAPP-000`
-- Auto Layout uyumlu
-- Dark Mode desteği
-- Uygulama bu ekranla başlamalı
+### 🛠️ Ortam Kurulumu ve Konfigürasyon Yönetimi
 
+Proje kapsamında mevcutta **Dev** ve **Store** olmak üzere iki adet yapılandırma (configuration) bulunmaktadır. Bu yapıya ek olarak, test ve ön prod ortamları için kullanılacak olan **Beta** ortamı da sisteme entegre edilecektir.
+
+#### 1️⃣ Beta Ortamının Eklenmesi
+
+- Beta ortamına özel yeni bir **Build Configuration** ve **Scheme** oluşturulacaktır.
+- Beta ortamı üzerinden bağımsız olarak uygulamanın derlenip test edilebilir olması sağlanacaktır.
+
+#### 2️⃣ Ortam Bazlı Konfigürasyon Yönetimi
+
+Ortam konfigürasyonlarının daha esnek, okunabilir ve sürdürülebilir olabilmesi amacıyla her ortam için ayrı konfigürasyon dosyaları kullanılacaktır. Bu yapı, CI/CD entegrasyonlarında da kolaylık sağlayacaktır.
+Proje içerisinde ki mevcut ortamların schemaları kontrol edilecektir.
+
+Her ortam için aşağıdaki formatta ayrı config dosyaları oluşturulacaktır:
+
+- `dev.config`
+- `beta.config`
+- `store.config`
+
+Bu dosyaların içerisinde ortam bazlı aşağıdaki parametreler tanımlanacaktır:
+
+| Parametre  | Açıklama |
+|-------------|----------|
+| `APP_NAME`  | Ortama özel uygulama adı |
+| `BUNDLE_ID` | Ortama özel Bundle Identifier |
+| `APP_ASSETS`| Ortama özel Asset Catalog (icon ve görseller) |
+
+#### 3️⃣ Örnek Config Dosyaları
+
+##### dev.config
+```env
+APP_NAME = α iOS Case SR (Dev)
+BUNDLE_ID = com.ios-case.dev
+APP_ASSETS = AppIconDev
+```
+
+##### beta.config
+```env
+APP_NAME = α iOS Case SR (Beta)
+BUNDLE_ID = com.ios-case.beta
+APP_ASSETS = AppIconBeta
+```
+
+##### store.config
+```env
+APP_NAME = α refASSETS = AppIconStore
+```ğ
 ---
 
 ### 💧 Splash Screen

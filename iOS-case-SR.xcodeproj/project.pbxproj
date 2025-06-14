@@ -503,7 +503,7 @@
 			};
 			name = "Dev-PreProd";
 		};
-		57FF4DCF2DFD4F4C0044B663 /* DevProd */ = {
+		57FF4DCF2DFD4F4C0044B663 /* Dev-Prod */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -557,9 +557,9 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
-			name = DevProd;
+			name = "Dev-Prod";
 		};
-		57FF4DD02DFD4F4C0044B663 /* DevProd */ = {
+		57FF4DD02DFD4F4C0044B663 /* Dev-Prod */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -587,7 +587,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = DevProd;
+			name = "Dev-Prod";
 		};
 		57FF4DD12DFD4F570044B663 /* Store-Debug */ = {
 			isa = XCBuildConfiguration;
@@ -771,7 +771,7 @@
 				57E6B3BB2DEA22AE0072CB6F /* Dev-AppStore */,
 				57FF4DCB2DFD4F360044B663 /* Dev-Gadget */,
 				57FF4DCD2DFD4F420044B663 /* Dev-PreProd */,
-				57FF4DCF2DFD4F4C0044B663 /* DevProd */,
+				57FF4DCF2DFD4F4C0044B663 /* Dev-Prod */,
 				57FF4DD12DFD4F570044B663 /* Store-Debug */,
 				57FF4DD32DFD4F5F0044B663 /* Store-AppStore */,
 			);
@@ -785,7 +785,7 @@
 				57E6B3B92DEA22AE0072CB6F /* Dev-AppStore */,
 				57FF4DCC2DFD4F360044B663 /* Dev-Gadget */,
 				57FF4DCE2DFD4F420044B663 /* Dev-PreProd */,
-				57FF4DD02DFD4F4C0044B663 /* DevProd */,
+				57FF4DD02DFD4F4C0044B663 /* Dev-Prod */,
 				57FF4DD22DFD4F570044B663 /* Store-Debug */,
 				57FF4DD42DFD4F5F0044B663 /* Store-AppStore */,
 			);
