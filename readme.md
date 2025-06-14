@@ -253,3 +253,11 @@ curl -X POST https://api.dev.hrapp.com/login \
 ---
 
 > Bu proje, minimum geliştirme ile farklı marka ihtiyaçlarına uyum sağlamayı hedefleyen, ölçeklenebilir ve modüler bir yapı üzerine kurulmuştur.
+
+## 🛠 Yapılan İyileştirme ve Düzeltilen Buglar
+
+Bu bölümde proje kapsamında geliştirilen iyileştirmeler ve tespit edilen/çözülen buglar listelenecektir. Eğer projede geliştirme sırasında fark ettiğiniz bug, performans sorunu veya başka bir problem varsa, lütfen buraya ekleyin.
+
+- [ ] Örnek: Splash ekranında gereksiz API çağrısı kaldırıldı.
+- [ ] Örnek: Onboard ekranında görsel cache mekanizması iyileştirildi.
+- [ ] [Eklemek için buraya not alın...]
