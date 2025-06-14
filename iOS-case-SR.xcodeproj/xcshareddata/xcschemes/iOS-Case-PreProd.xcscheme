@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1620"
+   LastUpgradeVersion = "2600"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -16,22 +16,22 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "57E6B3A32DEA22AD0072CB6F"
-               BuildableName = "iOS-case-mid.app"
-               BlueprintName = "iOS-case-mid"
-               ReferencedContainer = "container:iOS-case-mid.xcodeproj">
+               BuildableName = "iOS-case-SR.app"
+               BlueprintName = "iOS-case-SR"
+               ReferencedContainer = "container:iOS-case-SR.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Dev-AppStore"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       shouldAutocreateTestPlan = "YES">
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Dev-AppStore"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -45,14 +45,14 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "57E6B3A32DEA22AD0072CB6F"
-            BuildableName = "iOS-case-mid.app"
-            BlueprintName = "iOS-case-mid"
-            ReferencedContainer = "container:iOS-case-mid.xcodeproj">
+            BuildableName = "iOS-case-SR.app"
+            BlueprintName = "iOS-case-SR"
+            ReferencedContainer = "container:iOS-case-SR.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Dev-AppStore"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
@@ -62,17 +62,17 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "57E6B3A32DEA22AD0072CB6F"
-            BuildableName = "iOS-case-mid.app"
-            BlueprintName = "iOS-case-mid"
-            ReferencedContainer = "container:iOS-case-mid.xcodeproj">
+            BuildableName = "iOS-case-SR.app"
+            BlueprintName = "iOS-case-SR"
+            ReferencedContainer = "container:iOS-case-SR.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Debug">
+      buildConfiguration = "Dev-AppStore">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Dev-AppStore"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

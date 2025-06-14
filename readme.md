@@ -1,13 +1,13 @@
 # HR App
 
-Bu doküman, Mid seviyede iOS geliştirici pozisyonu için hazırlanmış olup, projenin genel yapısını, teknik gereksinimlerini ve geliştirilmesi gereken özellikleri detaylı şekilde açıklamaktadır. Adayın proje kapsamını ve beklentileri net olarak anlaması amaçlanmıştır.
+Bu doküman, SR seviyede iOS geliştirici pozisyonu için hazırlanmış olup, projenin genel yapısını, teknik gereksinimlerini ve geliştirilmesi gereken özellikleri detaylı şekilde açıklamaktadır. Adayın proje kapsamını ve beklentileri net olarak anlaması amaçlanmıştır.
 
 ---
 
 Modern İK ekipleri için geliştirilmiş, aday değerlendirme ve işe alım süreçlerini kolaylaştırmayı amaçlayan bir mobil uygulama.
 
 ## 👨‍💻 Geliştirici
-**Rol:** Mid iOS Developer
+**Rol:** SR iOS Developer
 
 ---
 
@@ -50,24 +50,9 @@ Modern İK ekipleri için geliştirilmiş, aday değerlendirme ve işe alım sü
 - **Layout:** Auto Layout ile responsive tasarım
 - **Geliştirme Yöntemi:** Programmatic veya XIB
 - **Servis Katmanı:** DataProvider isim bir spm package içerisinde bulunmalıdır. (Alamofire ile bir alt yapı kurulmalıdır.)
-- **SwiftLint Kurulumu:** Projede SwiftLint kurulumu yapılmalıdır.
-- **Deeplink:** Uygulama içerisinde farklı ekranlara yönlendirme için deeplink mekanizması kullanılacaktır. (Scheme: loodosCase)
-- **Firebase:** Remote Config, Crashlytics ve Analytics entegre edilmelidir.
-
----
-
-## ✨ Nice to Have Özellikler
-- Lottie animasyonları
-- Dev / Preprod / Prod şema yapısı
-- SwiftGen Kurulumu
-- Github Actions Entegrasyonu
-
-Not: Bu özellikler zorunlu olmamakla birlikte, projeye değer katacaktır.
-
 ---
 
 ## 📂 API Örnekleri
-
 Proje içerisinde kullanılan API çağrıları için aşağıdaki CURL örnekleri referans alınabilir. Her özellik bölümünde tekrar eden CURL örnekleri yerine bu bölümdeki örnekler kullanılacaktır.
 
 ```bash
@@ -83,7 +68,7 @@ curl -X POST https://api.dev.hrapp.com/login \
 
 ## 🚀 Özellikler
 
-### 🎬 Launch Screen
+### 🎬 Ortam Kurulumu
 - [Figma Linki](https://www.figma.com/design/MbORukxK22gzWuvYmP41Vv/Supa-Resume---Light---Dark--FREE-Resume-Cover-Letter---Community-?node-id=33-5366)
 - **Task Kodu:** `HRAPP-000`
 - Auto Layout uyumlu
@@ -238,9 +223,9 @@ curl -X POST https://api.dev.hrapp.com/login \
 - API örnekleri için bkz. "API Örnekleri" bölümü.
 - TabBar’da erişilebilir bir sayfa olarak gösterilmelidir.
 - Sayfa açıldığında TabBar gizlenmelidir.
-- Yukarıda verilen iki farklı servis çağrısı birleştirilerek tek bir ekranda gösterim yapılmalıdır.
-- Menü listesinde her bir ürün için “+” butonu yer almalıdır. Kullanıcı bu butona tıkladığında bir sheet açılmalı, ayrıca sepete eklendiğine dair bir toast mesajı gösterilmelidir.
-- UI tasarımı ve içerik yapısı Figma’daki örneğe uygun hazırlanmalıdır.
+- Kullanıcı, menü listesinde yer alan bir menü öğesinin yanındaki "+" butonuna tıkladığında, ekranda "Menüye tıklandı" mesajı gösteren bir toast bildirimi çıkmalıdır.
+- Kullanıcı, herhangi bir yemek öğesinin yanındaki "+" butonuna tıkladığında ise, ekranda "Yemek sepete eklendi" mesajı gösteren bir toast bildirimi çıkmalıdır.
+- Her iki toast bildirimi de kullanıcı etkileşiminden hemen sonra kısa süreli olarak gösterilmeli ve ardından otomatik olarak kaybolmalıdır.
 
 - **Nice to Have:**
   - Firebase event: cafeteria_viewed, cafeteria_refreshed
